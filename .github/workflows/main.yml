@@ -2,10 +2,10 @@ name: DevSecOps
 'on':
   push:
     branches:
-      - develop
+      - master
   pull_request:
     branches:
-      - develop
+      - master
   workflow_dispatch: null
 jobs:
   Lint:
