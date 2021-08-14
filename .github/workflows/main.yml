@@ -9,14 +9,11 @@ name: DevSecOps
   workflow_dispatch: null
 
 jobs:
-  truffle:
-       name: trufflehog-actions-scan
-       runs-on: ubuntu-latest
-       steps:
-       - name: secretsscan
-         uses: actions/checkout@master
-       - uses: edplato/trufflehog-actions-scan@master
-         with:
-          scanArguments: "--regex --entropy=false --max_depth=0 --rules /regexes.json" # Add custom options here*
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: gitleaks-action
+      uses: zricethezav/gitleaks-action@master
   
 
